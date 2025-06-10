@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Meu Amor 💜</title>
+
+  <!-- Fonte cursiva para títulos -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <!-- Fonte limpa e elegante para texto geral -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cursiva: 'Great Vibes', cursive;
+      --limpa: 'Open Sans', sans-serif;
+      --roxo: #6a0dad;
+      --cinza: #222;
+      --branco: #fff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--limpa);
+      background-color: #000;
+      color: var(--branco);
+      overflow-x: hidden;
+    }
+
+    #inicio {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+      position: relative;
+      flex-direction: column;
+    }
+
+    #selo {
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle at 30% 30%, #8b0000, #4b0000);
+      border-radius: 50%;
+      box-shadow: inset -2px -2px 6px rgba(0, 0, 0, 0.6),
+                  inset 2px 2px 4px rgba(255, 100, 100, 0.2),
+                  0 0 20px rgba(255, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--cursiva);
+      font-size: 2.5rem;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      position: relative;
+    }
+
+    #selo.animado:active {
+      transform: scale(0.95) rotate(-3deg);
+      opacity: 0.8;
+      box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
+    }
+
+    #selo::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 20%;
+      height: 20%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      filter: blur(2px);
+    }
+
+    main {
+      display: none;
+      background: linear-gradient(to bottom, #111, #1a1a1a);
+      padding: 2rem;
+    }
+
+    h1, h2 {
+      font-family: var(--cursiva);
+      color: var(--roxo);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    .fotos img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-style: italic;
+      color: var(--roxo);
+      border-top: 1px solid var(--roxo);
+      font-family: var(--cursiva);
+    }
+
+    @media (max-width: 600px) {
+      .fotos img {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Tela de abertura com o selo -->
+  <section id="inicio">
+    <div id="selo" class="animado">
+      <span class="inicial">AW</span>
+    </div>
+    <audio id="musica" src="iris-violino.mp3" loop></audio>
+  </section>
+
+  <!-- Conteúdo principal do site -->
+  <main>
+    <section>
+      <h1>Feliz Dia dos Namorados 💜</h1>
+      <p>Você é o meu amor, meu carinho, meu universo. Esse pequeno site é só um jeitinho de te mostrar o quanto você é especial pra mim.</p>
+    </section>
+
+    <section class="fotos">
+      <h2>Nossas Memórias</h2>
+      <!-- Adicione suas fotos aqui depois -->
+      <!-- <img src="foto1.jpg" alt="Foto 1"> -->
+    </section>
+
+    <section class="mensagem">
+      <h2>Uma Mensagem Para Você</h2>
+      <!-- Adicione sua mensagem aqui depois -->
+      <!-- <p>Mensagem romântica...</p> -->
+    </section>
+
+    <footer>
+      Feito com amor, AW 💌
+    </footer>
+  </main>
+
+  <!-- Script para mostrar o conteúdo e tocar música ao clicar no selo -->
+  <script>
+    document.getElementById('selo').addEventListener('click', function () {
+      document.querySelector('main').style.display = 'block';
+      document.getElementById('inicio').style.display = 'none';
+      document.getElementById('musica').play();
+    });
+  </script>
+</body>
+</html>
