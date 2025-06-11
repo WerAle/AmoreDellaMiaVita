@@ -31,7 +31,7 @@ body {
 }
 
 .selo-container {
-  position: relative;
+  position: absolute;
   width: 150px;
   height: 150px;
   cursor: pointer;
