@@ -111,9 +111,13 @@ body {
   0% { background-image: url('img/img1.heic'); }
   20% { background-image: url('img/img2.heic'); }
   40% { background-image: url('img/img3.heic'); }
-  60% { background-image: url('img/img2.jpg'); }
-  80% { background-image: url('img/img3.jpg'); }
-  100% { background-image: url('img/img1.heic'); }
+  60% { background-image: url('img/img4.heic'); }
+  80% { background-image: url('img/img5.heic'); }
+  100% { background-image: url('img/img6.heic'); }
+  80% { background-image: url('img/img7.heic'); }
+  60% { background-image: url('img/img8.heic'); }
+  40% { background-image: url('img/img9.heic'); }
+  20% { background-image: url('img/img10.heic'); }
 }
 
 main {
