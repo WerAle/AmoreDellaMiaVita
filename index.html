@@ -3,32 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AW 💌</title>
-  <link rel="stylesheet"
-    href="style.css" />
+  <title>Para o Amor da Minha Vida</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" as="audio" href="iris-violino.mp3" />
 </head>
 <body>
-  <div class="cover-screen" id="coverScreen">
-    <div class="cover-background"></div>
-    <div class="seal" onclick="revealSite()">AW</div>
+  <div class="intro">
+    <div class="selo-container">
+      <img src="selo.png" alt="Selo de cera" id="selo"/>
+      <p class="iniciais">AW</p>
+    </div>
   </div>
 
-  <div class="site-content" id="siteContent">
-    <section class="main-message">
-      <h1>Feliz Dia dos Namorados 💜</h1>
-      <p>Cada momento ao seu lado é um presente que o tempo me deu. Te amo!</p>
-    </section>
+  <div class="conteudo oculto" id="conteudo">
+    <audio autoplay loop>
+      <source src="iris-violino.mp3" type="audio/mpeg" />
+    </audio>
+
+    <main>
+      <h1>Para o Amor da Minha Vida</h1>
+      <p>Você é minha inspiração todos os dias. Este cantinho é só nosso, feito com todo amor do mundo.</p>
+
+      <div class="botoes">
+        <a href="memorias.html" class="botao">Nossas Memórias</a>
+        <a href="mensagem.html" class="botao">Minha Mensagem</a>
+      </div>
+    </main>
 
     <footer>
-      <p>Feito com amor, AW 💌</p>
+      Feito com amor, AW 💌
     </footer>
   </div>
 
-  <audio autoplay loop>
-    <source src="iris-violino.mp3" type="audio/mpeg" />
-  </audio>
-
   <script src="script.js" defer></script>
-    
 </body>
 </html>
