@@ -5,6 +5,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const conteudo = document.getElementById('conteudo');
   const musica = document.getElementById('musica');
 
+  if (!iniciais) {
+    console.error("Elemento com id 'gatilho' não encontrado!");
+    return;
+  }
+
   iniciais.addEventListener('click', () => {
     faixa.classList.add('fade-out');
     iniciais.classList.add('fade-out');
