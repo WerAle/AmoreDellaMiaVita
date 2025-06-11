@@ -5,8 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const intro = document.querySelector(".intro");
 
   selo.addEventListener("click", () => {
-    intro.classList.add("fade-out");
-    document.getElementById('musica').play();
+    audio.play();
+  selo.classList.add('fade-out');
+  setTimeout(() => {
+    intro.classList.add('oculto');
+    main.classList.remove('oculto');
+    document.body.classList.add('fundo-espelho');
+  }, 1500);
 
     setTimeout(() => {
       intro.style.display = "none";
