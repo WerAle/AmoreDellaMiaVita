@@ -23,6 +23,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-color: #0d0d0d; /* fundo liso escuro enquanto o selo aparece */
 }
 
 .fade-out {
