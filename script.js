@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   selo.addEventListener("click", () => {
     intro.classList.add("fade-out");
+    document.getElementById('musica').play();
 
     setTimeout(() => {
       intro.style.display = "none";
