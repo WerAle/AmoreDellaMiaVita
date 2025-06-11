@@ -27,20 +27,21 @@ body {
 }
 
 .selo-container {
+  width: 350px;
+  height: 350px;
   position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto; /* centraliza horizontalmente */
-  z-index: 2;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #selo {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   transition: transform 1s ease, opacity 1s ease;
-  z-index: 1;
-  position: relative;
+  z-index: 8;
 }
 
 #selo.fade-out {
@@ -50,13 +51,13 @@ body {
 
 .iniciais {
   font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
+  font-size: 4rem;
   color: white;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 11;
   pointer-events: none;
 }
 
