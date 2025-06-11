@@ -1,22 +1,24 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const selo = document.getElementById('selo');
-  const intro = document.querySelector('.intro');
-  const musica = document.getElementById('musica');
+  const faixa = document.querySelector('.faixa');
+  const iniciais = document.getElementById('gatilho');
+  const intro = document.getElementById('intro');
   const conteudo = document.getElementById('conteudo');
+  const musica = document.getElementById('musica');
 
-  selo.addEventListener('click', () => {
-    selo.classList.add('fade-out');
+  iniciais.addEventListener('click', () => {
+    faixa.classList.add('fade-out');
+    iniciais.classList.add('fade-out');
 
     setTimeout(() => {
-      intro.classList.add('oculto');
+      intro.style.display = 'none';
       conteudo.classList.remove('oculto');
       document.body.classList.add('fundo-espelho');
+    }, 1000);
 
-      if (musica) {
-        musica.play().catch(error => {
-          console.warn('Erro ao reproduzir a música:', error);
-        });
-      }
-    }, 1000); // Espera o selo sumir antes de mostrar o conteúdo
+    if (musica) {
+      musica.play().catch((error) => {
+        console.log('Erro ao reproduzir a música:', error);
+      });
+    }
   });
 });
