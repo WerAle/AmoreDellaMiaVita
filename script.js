@@ -19,5 +19,5 @@ window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add("fundo-espelho");
     }, 1000); // tempo da animação de fade-out
     });
-  });
+  };
 });
