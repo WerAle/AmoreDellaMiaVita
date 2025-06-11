@@ -1,22 +1,23 @@
 // script.js
-document.addEventListener("DOMContentLoaded", function () {
-  const selo = document.getElementById("selo");
-  const conteudo = document.getElementById("conteudo");
-  const intro = document.querySelector(".intro");
+window.addEventListener('DOMContentLoaded', () => {
+  const selo = document.getElementById('selo');
+  const intro = document.querySelector('.intro');
+  const musica = document.getElementById('musica');
 
-  selo.addEventListener("click", () => {
-    audio.play();
-  selo.classList.add('fade-out');
-  setTimeout(() => {
+  selo.addEventListener('click', () => {
+    selo.classList.add('fade-out');
     intro.classList.add('oculto');
-    main.classList.remove('oculto');
-    document.body.classList.add('fundo-espelho');
-  }, 1500);
+    document.querySelector('main').classList.remove('oculto');
+
+    if (musica) {
+      musica.play().catch(error => {
+        console.log('Erro ao reproduzir a música:', error);
 
     setTimeout(() => {
       intro.style.display = "none";
       conteudo.classList.remove("oculto");
       document.body.classList.add("fundo-espelho");
     }, 1000); // tempo da animação de fade-out
+    });
   });
 });
