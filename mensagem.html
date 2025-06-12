@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="style.css" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    
     body {
       background: black;
       color: white;
@@ -16,20 +20,27 @@
       overflow-y: auto;
     }
 
+    .espaco-titulo {
+      height: 140px; /* Espaço reservado para o título flutuante */
+    }
+
     .topo-fixo {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 1000;
       padding: 1.5rem 1rem;
       text-align: center;
       font-family: 'Dancing Script', cursive;
       font-size: 2.5rem;
-      transition: backdrop-filter 0.3s, background-color 0.3s;
+      background: transparent;
+      transition: all 0.3s ease;
     }
 
     .topo-fixo.ativo {
       backdrop-filter: blur(10px);
       background-color: rgba(0, 0, 0, 0.4);
+      padding: 1rem;
+      font-size: 2rem;
     }
 
     .conteudo {
@@ -52,6 +63,7 @@
       color: #cccccc;
       cursor: pointer;
       transition: color 0.3s;
+      margin-top: 2rem;
     }
 
     .gatilho:hover {
@@ -65,6 +77,7 @@
       line-height: 1.8;
       white-space: pre-wrap;
       text-align: left;
+      overflow-wrap: break-word;
     }
 
     .botao-voltar {
@@ -81,18 +94,34 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      z-index: 999;
       transition: background 0.3s ease;
     }
 
     .botao-voltar:hover {
       background-color: #9575cd;
     }
+
+    @media (max-width: 600px) {
+      .topo-fixo {
+        font-size: 2rem;
+      }
+      .topo-fixo.ativo {
+        font-size: 1.5rem;
+      }
+      .botao-voltar {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+    
   </style>
 </head>
 <body class="fundo-espelho">
 
   <audio id="musicaMensagem" src="mensagem.mp3" preload="auto"></audio>
 
+  <div class="espaco-titulo"></div>
   <div class="topo-fixo" id="cabecalho">Nossas Palavras</div>
 
   <div class="conteudo">
@@ -106,6 +135,7 @@
     const gatilho = document.getElementById('gatilhoMensagem');
     const mensagem = document.getElementById('mensagem');
     const musica = document.getElementById('musicaMensagem');
+    const cabecalho = document.getElementById('cabecalho');
 
     const texto = `
 É difícil colocar em palavras tudo o que você significa pra mim...
