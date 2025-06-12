@@ -16,6 +16,22 @@
       overflow-y: auto;
     }
 
+    .topo-fixo {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5rem;
+      transition: backdrop-filter 0.3s, background-color 0.3s;
+    }
+
+    .topo-fixo.ativo {
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
     .conteudo {
       padding: 4rem 2rem;
       display: flex;
@@ -77,8 +93,9 @@
 
   <audio id="musicaMensagem" src="mensagem.mp3" preload="auto"></audio>
 
+  <div class="topo-fixo" id="cabecalho">Nossas Palavras</div>
+
   <div class="conteudo">
-    <h1>Nossas Palavras</h1>
     <div class="gatilho" id="gatilhoMensagem">O que falar de você...</div>
     <div class="mensagem-digitada" id="mensagem"></div>
   </div>
@@ -118,6 +135,14 @@ Essa mensagem é só um pedacinho do que meu coração sente — o resto... eu c
     }
 
     gatilho.addEventListener('click', digitarTexto);
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        cabecalho.classList.add('ativo');
+      } else {
+        cabecalho.classList.remove('ativo');
+      }
+    });
   </script>
 
 </body>
