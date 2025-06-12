@@ -87,6 +87,8 @@
 </head>
 <body class="fundo-espelho">
 
+  <audio id="musicaGaleria" src="kiss.mp3" loop></audio>
+
   <div class="galeria">
     <img src="img1.jpg" alt="Memória 1">
     <img src="img2.jpg" alt="Memória 2">
@@ -121,6 +123,22 @@
       imgAmpliada.src = '';
     }
   </script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const musicaGaleria = document.getElementById('musicaGaleria');
+
+    if (musicaGaleria) {
+      // Toca ao clicar em qualquer parte da tela
+      const tocarMusica = () => {
+        musicaGaleria.play().catch(() => {});
+        document.removeEventListener('click', tocarMusica);
+      };
+
+      document.addEventListener('click', tocarMusica);
+    }
+  });
+</script>
 
 </body>
 </html>
