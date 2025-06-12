@@ -159,16 +159,31 @@
       img.addEventListener('click', () => {
         imgAmpliada.src = img.src;
         ampliada.style.display = 'flex';
+        img.addEventListener('click', () => {
+        imgAmpliada.src = img.src;
+        ampliada.style.display = 'flex';
+
+        // Se quiser bloquear o scroll quando o modal abre
+        document.body.style.overflow = 'hidden';
+    });
       });
     });
 
     function fecharImagem() {
       ampliada.style.display = 'none';
+      imgAmpliada.src = ''
+      document.querySelector('.fechar').addEventListener('click', () => {
+      ampliada.style.display = 'none';
       imgAmpliada.src = '';
+
+      // Garante que o scroll volte a funcionar
+      document.body.style.overflow = 'auto';
+  });;
     }
   </script>
 
   <script>
+    
   document.addEventListener('DOMContentLoaded', () => {
     const musicaGaleria = document.getElementById('musicaGaleria');
     if (!musicaGaleria) return;
