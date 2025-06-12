@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossas Memórias</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: black;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      z-index: 1;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .imagem-ampliada {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .imagem-ampliada img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 16px;
+    }
+
+    .fechar {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .botao-voltar {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #7e57c2;
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.3s ease;
+    }
+
+    .botao-voltar:hover {
+      background-color: #9575cd;
+    }
+  </style>
+</head>
+<body class="fundo-espelho">
+
+  <div class="galeria">
+    <img src="img1.jpg" alt="Memória 1">
+    <img src="img2.jpg" alt="Memória 2">
+    <img src="img3.jpg" alt="Memória 3">
+    <img src="img4.jpg" alt="Memória 4">
+    <!-- Adicione quantas quiser -->
+  </div>
+
+  <div class="imagem-ampliada" id="ampliada">
+    <button class="fechar" onclick="fecharImagem()">&times;</button>
+    <img id="imgAmpliada" src="" alt="Imagem ampliada">
+  </div>
+
+  <a href="index.html" class="botao-voltar">
+    ← Voltar
+  </a>
+
+  <script>
+    const imagens = document.querySelectorAll('.galeria img');
+    const ampliada = document.getElementById('ampliada');
+    const imgAmpliada = document.getElementById('imgAmpliada');
+
+    imagens.forEach(img => {
+      img.addEventListener('click', () => {
+        imgAmpliada.src = img.src;
+        ampliada.style.display = 'flex';
+      });
+    });
+
+    function fecharImagem() {
+      ampliada.style.display = 'none';
+      imgAmpliada.src = '';
+    }
+  </script>
+
+</body>
+</html>
