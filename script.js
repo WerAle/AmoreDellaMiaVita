@@ -23,25 +23,38 @@ window.addEventListener('DOMContentLoaded', () => {
     function atualizarRelogioAmor() {
     const inicio = new Date("2024-05-03T19:00:00");
     const agora = new Date();
-    let diff = agora - inicio;
+    
+    let anos = agora.getFullYear() - inicio.getFullYear();
+    let meses = agora.getMonth() - inicio.getMonth();
+    let dias = agora.getDate() - inicio.getDate();
+    let horas = agora.getHours() - inicio.getHours();
+    let minutos = agora.getMinutes() - inicio.getMinutes();
+    let segundos = agora.getSeconds() - inicio.getSeconds();
 
-    const segundos = Math.floor(diff / 1000) % 60;
-    const minutos = Math.floor(diff / 1000 / 60) % 60;
-    const horas = Math.floor(diff / 1000 / 60 / 60) % 24;
-    const diasTotal = Math.floor(diff / 1000 / 60 / 60 / 24);
+    if (segundos < 0) {
+      segundos += 60;
+      minutos--;
+    }
+    if (minutos < 0) {
+      minutos += 60;
+      horas--;
+    }
+    if (horas < 0) {
+      horas += 24;
+      dias--;
+    }
+    if (dias < 0) {
+      const mesAnterior = new Date(agora.getFullYear(), agora.getMonth(), 0);
+      dias += mesAnterior.getDate();
+      meses--;
+    }
+    if (meses < 0) {
+      meses += 12;
+      anos--;
+    }
 
-    // Anos e meses aproximados (melhor para visual)
-    const anos = Math.floor(diasTotal / 365);
-    const meses = Math.floor((diasTotal % 365) / 30);
-    const dias = diasTotal - (anos * 365) - (meses * 30);
-
-    document.getElementById("contador-amor").textContent =
-      `${anos} ano${anos !== 1 ? 's' : ''}, ` +
-      `${meses} mes${meses !== 1 ? 'es' : ''}, ` +
-      `${dias} dia${dias !== 1 ? 's' : ''}, ` +
-      `${horas} hora${horas !== 1 ? 's' : ''}, ` +
-      `${minutos} minuto${minutos !== 1 ? 's' : ''} e ` +
-      `${segundos} segundo${segundos !== 1 ? 's' : ''}`;
+    const tempo = `${anos} ano${anos !== 1 ? 's' : ''}, ${meses} mês${meses !== 1 ? 'es' : ''}, ${dias} dia${dias !== 1 ? 's' : ''}, ${horas}h ${minutos}min ${segundos}s`;
+    document.getElementById('tempo-juntos').textContent = tempo;
   }
 
   setInterval(atualizarRelogioAmor, 1000);
