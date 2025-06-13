@@ -138,22 +138,17 @@ footer {
   opacity: 0.7;
 }
 
-.relogio-container {
-    margin-top: 2rem;
-    text-align: center;
-    color: white;
-    font-family: 'Georgia', serif;
-    font-size: 1.2rem;
-  }
+.relogio-amor {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  color: white;
+}
 
-  #contador-amor {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #e1bee7;
-  }
-
-  .legenda {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: #ffccf9;
-  }
+.relogio-amor p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #f8bbd0;
+}
