@@ -13,19 +13,6 @@ window.addEventListener('DOMContentLoaded', () => {
   iniciais.addEventListener('click', () => {
     faixa.classList.add('fade-out');
     iniciais.classList.add('fade-out');
-    if (window.innerWidth <= 768) {
-    document.body.classList.remove('bloqueado-scroll');
-
-      const botaoSelo = document.getElementById('botaoSelo');
-
-botaoSelo.addEventListener('click', () => {
-  // Só libera scroll em telas pequenas
-  if (window.innerWidth <= 768) {
-    document.body.classList.remove('bloqueado-scroll');
-  }
-
-  // Continue com a lógica de mostrar o conteúdo
-});
 
     setTimeout(() => {
       intro.style.display = 'none';
