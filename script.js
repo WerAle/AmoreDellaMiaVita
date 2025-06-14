@@ -13,6 +13,8 @@ window.addEventListener('DOMContentLoaded', () => {
   iniciais.addEventListener('click', () => {
     faixa.classList.add('fade-out');
     iniciais.classList.add('fade-out');
+    if (window.innerWidth <= 768) {
+    document.body.classList.remove('bloqueado-scroll');
 
     setTimeout(() => {
       intro.style.display = 'none';
