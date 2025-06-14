@@ -60,12 +60,16 @@
     }
 
     .gatilho {
-  font-size: 1.8rem;
-  color: #cccccc;
-  cursor: pointer;
-  transition: all 0.6s ease;
-  margin-top: -30rem;
-}
+      font-size: 1.8rem;
+      color: #cccccc;
+      cursor: pointer;
+      transition: all 0.6s ease;
+      margin-top: -30rem;
+    }
+
+    .gatilho.aberto {
+      margin-top: 30rem; /* desce depois do clique */
+    }
 
     .gatilho:hover {
       color: white;
@@ -159,6 +163,8 @@ De seu amigo/companheiro/namorado/noivo/esposo Werickson Alexandre Carvalho Fern
       if (digitando) return;
       digitando = true;
       musica.play().catch(() => {});
+      gatilho.classList.add('aberto');
+      
       const intervalo = setInterval(() => {
         if (index < texto.length) {
           mensagem.textContent += texto.charAt(index);
