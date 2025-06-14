@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-body.bloqueado-scroll {
-  overflow: hidden;
-  height: 100vh;
-}
-
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #0d0d0d;
