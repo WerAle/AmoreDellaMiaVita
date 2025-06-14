@@ -8,6 +8,7 @@
 
 body.bloqueado-scroll {
   overflow: hidden;
+  height: 100vh;
 }
 
 body {
@@ -44,6 +45,7 @@ body {
 }
 
 .iniciais {
+  position: fixed;
   font-family: 'Great Vibes', cursive;
   font-size: 4rem;
   color: white;
