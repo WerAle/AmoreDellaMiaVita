@@ -11,19 +11,22 @@
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
 <script>
   window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "9999c884-3af5-451f-8084-5e252cff86ce",
-      notifyButton: {
-        enable: true  // troque para true se quiser o botão flutuante automático
-      },
-      // opcional para permitir testes em localhost:
-      // allowLocalhostAsSecureOrigin: true
-    });
-
-    // URL padrão que será aberta quando a notificação for clicada
-    OneSignal.setDefaultNotificationUrl('https://werale.github.io/AmoreDellaMiaVita/');
+OneSignal.push(function() {
+  OneSignal.init({
+    appId: "9999c884-3af5-451f-8084-5e252cff86ce",
+    notifyButton: { enable: true }
   });
+
+  // Exemplo: quando o usuário aceita receber notificações
+  OneSignal.User.PushSubscription.addEventListener("change", function(state) {
+    console.log("Inscrição mudou:", state);
+    if (state.id) {
+      console.log("Usuário inscrito! ID:", state.id);
+    } else {
+      console.log("Usuário não inscrito");
+    }
+  });
+});
 </script>
 
 </head>
